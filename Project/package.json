@@ -1,0 +1,17 @@
+{
+  "name": "task_1",
+  "version": "1.0.0",
+  "description": "Responsive porfolio website",
+  "main": "index.js",
+  "homepage": "",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Walid Wise",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "node-sass": "^6.0.1"
+  }
+}

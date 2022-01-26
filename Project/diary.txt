@@ -1,0 +1,42 @@
+***After the module tasklist part 1:
+What I learned:
+    -Knowledge about a static responsive website with different pages
+    -Project structure about organizing html, css files 
+    -How to install Node environment for coding
+    -How to install Git 
+    -How to install Visual Studio Code with some useful extensions and understand its use: 
+        + Live Server: launch a static website on dev server 
+        + Bracket Pair Colorizer: it helps me to identified brackets when coding with different colors
+        + Prettier: code formatter which helps my code look clear and more harmonizing
+    -Install node-sass and set up using sass in the project
+
+***After the module tasklist part 2:
+What I learned:
+    -Create the homepage with basic HTML tags
+    -How to use fontAwesome in the project
+    -Add core styles to html tags and class names in main.scss
+    -Use Chrome Tool to check computed properties's styles, check source code of the project
+    -Create mixins(conditions in mixins), variables in main.scss file
+***After the module tasklist part 3:
+What I learned:
+    -Know how to create pure CSS menu button
+    -Add the JavaScript-code to handle the rotating of menu button
+    -Learn to use CSS transitions to rotate the button with 3 lines into an X
+***After the module tasklist part 4:
+What I learned:
+    -Know how to create the menu overlay
+    -Create mixins for media query to check responsiveness of the menu
+    -Know how to add branding and navigation to the site
+***After the module tasklist part 5:
+What I learned:
+    -Create function 'set-text-color' in _config.scss 
+    -Create about page using CSS Grid
+    -Add grid template areas to map out the layout.
+    -Learn to add Sass styling and make the page responsive
+***After the module tasklist part 6:
+What I learned:
+    -Learn more about CSS grid and CSS Flexbox
+    -Learn the properties of both layouts (Contact page and Work page)
+***After the module tasklist part 7:
+What I learned:
+    -Know how to deploy your webste with Github Pages

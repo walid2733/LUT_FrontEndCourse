@@ -1,0 +1,404 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+//Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    font-size: 3.5rem;
+    font-style: italic;
+    animation: type 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms steps(44) infinite normal;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.wave {
+  animation: waveAnimation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 3rem;
+  height: 100%;
+  min-height: calc(100vh - 280px); //made sticky footer, footer's height: 60px
+
+  .portrait {
+    width: 250px;
+    height: 250px;
+    background: url("../img/goku.jpeg");
+    border-radius: 50%;
+    border: solid 3px $secondary-color;
+    background-size: cover;
+  }
+
+  &#home {
+    overflow: hidden;
+    // h1 {
+    // }
+  }
+}
+
+//tech stack
+.iconsField {
+  &__title {
+    color: set-text-color($primary-color);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-size: 24px;
+    font-style: italic;
+  }
+  &__cover {
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(lighten($primary-color, 2), 0.9);
+    width: 100%;
+    padding: 15px;
+  }
+  &__languageIcons {
+    font-size: 55px;
+  }
+  &__socialMediaIcons {
+    color: set-text-color($primary-color);
+    font-size: 40px;
+    &:hover {
+      color: $secondary-color;
+      @include easeOut();
+    }
+  }
+}
+
+//about page
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+}
+
+// Work/Projects
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  .item {
+    position: relative;
+    text-align: center;
+
+    .item-title {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $secondary-color;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 700;
+    }
+    .item-tech {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $secondary-color;
+      font-size: 0.9rem;
+    }
+  }
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.1;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+//Working Experience
+.working-title {
+  font-size: 2rem;
+  color: $secondary-color;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.timeline {
+  position: relative;
+  padding: 1rem;
+  margin: 0 auto;
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border: 1px solid tan;
+    right: 40px;
+    top: 0;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .timeline-item {
+    padding: 1rem;
+    border-bottom: 2px solid tan;
+    position: relative;
+    margin: 1rem 3rem 1rem 1rem;
+    clear: both;
+    &:after {
+      content: "";
+      position: absolute;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: -0.625rem;
+      top: calc(50% - 5px);
+      border-style: solid;
+      border-color: tomato tomato transparent transparent;
+      border-width: 0.625rem;
+      transform: rotate(45deg);
+    }
+  }
+
+  .timeline-year {
+    text-align: center;
+    max-width: 9.375rem;
+    margin: 0 3rem 0 auto;
+    font-size: 1.8rem;
+    background: tomato;
+    color: white;
+    line-height: 1;
+    padding: 0.5rem 0 1rem;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .sub-heading {
+    color: rgba(lighten($secondary-color, 2), 0.9);
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  .company-name {
+    font-style: italic;
+  }
+}
+
+// Contact Page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+.contact-form {
+  margin: 0 auto;
+  .text-secondary {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .inputField {
+      width: 30%;
+      margin-top: 12px;
+      height: 40px;
+      border: 1px solid darken($secondary-color, 5);
+      background-color: rgba(lighten($primary-color, 2), 0.9);
+      border-radius: 20px;
+      color: set-text-color($primary-color);
+      padding-left: 12px;
+      &:focus,
+      &:hover {
+        border: 5px solid darken($secondary-color, 10);
+      }
+      @include placeholder {
+        font-style: italic;
+        color: set-text-color($primary-color);
+        font-weight: 100;
+        padding-left: 12px;
+      }
+    }
+    textarea {
+      @include placeholder {
+        display: block !important;
+        font-style: italic;
+        color: set-text-color($primary-color);
+        font-weight: 100;
+        padding-left: 12px;
+      }
+      margin-top: 12px;
+      width: 30%;
+      border: 1px solid darken($secondary-color, 5);
+      background-color: rgba(lighten($primary-color, 2), 0.9);
+      border-radius: 20px;
+      color: set-text-color($primary-color);
+      padding-left: 12px;
+      &:focus,
+      &:hover {
+        border: 5px solid darken($secondary-color, 10);
+      }
+    }
+    .submitBtn {
+      &:hover {
+        background-color: rgba(lighten($secondary-color, 2), 0.9);
+        i,
+        span {
+          color: set-text-color($secondary-color);
+        }
+      }
+      i,
+      span {
+        cursor: pointer;
+        color: set-text-color($primary-color);
+        padding-left: 4px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 7);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+//footer
+footer {
+  background-color: darken($primary-color, 10);
+  margin-top: 60px;
+}
+.footer {
+  height: 280px;
+  color: white;
+  border-top: 12px solid #e8be02;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding: 0 48px;
+  h3 {
+    color: $secondary-color;
+  }
+  h4 {
+    line-height: 0.8;
+  }
+}
+@import "mobile";
