@@ -1,6 +1,6 @@
 # LUT Front End Course
 
-This repository is made by Thien Walid Wise, student number is: x106954, student email is: Md.Walid.Wise@student.lut.fi@student.lut.fi
+This repository is made by  Walid Wise, student number is: x106954, student email is: Md.Walid.Wise@student.lut.fi@student.lut.fi
 
 This repository contains 2 folders: Work and Project
 
