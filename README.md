@@ -10,7 +10,7 @@ The link to a video of project running: [https://drive.google.com/drive/folders/
 ## Coursework
 This folder is implemented according to the [videos](https://www.youtube.com/watch?v=gYzHS-n2gqU&list=PLillGF-RfqbYoGoCjKoMOkVznV6aSXKzU) on Youtube from LUT. 
 
-Inside this folder also contain a diary.txt ![Diary Image](./CourseWork/dist/img/diary.PNG) file which is what I have learnt through these videos.
+Inside this folder also contain a diary.txt ![Diary Image](./Work/dist/img/diary.PNG) file which is what I have learnt through these videos.
 
 This folder also include the PDF file for learning diary(FrontEndCourse_learning_diary.pdf) according to the template from LUT.
 ## Project
